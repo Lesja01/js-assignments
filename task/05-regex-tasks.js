@@ -31,7 +31,8 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+   let regex=/^[0-9A,a,B,b,C,c,D,d,F,f]{8}-[0-9A,a,B,b,C,c,D,d,F,f]{4}-[0-9A,a,B,b,C,c,D,d,F,f]{4}-[0-9A,a,B,b,C,c,D,d,F,f]{4}-[0-9A,a,B,b,C,c,D,d,F,f]{12}$/i
+   return regex
 }
 
 
