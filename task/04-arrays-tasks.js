@@ -483,8 +483,13 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-   var byCoutry = arr.slice(0);
-   byCoutry=byCoutry.sort((a,b)=>(a.country<b.country) ? 1 : -1)    
+   throw new Error('Not implemented');
+   var byCoutry = arr;
+   //console.log(byCoutry)
+   byCoutry=byCoutry.sort((a,b)=>(a.country>b.country) ? 1 : -1) 
+   //console.log(byCoutry)
+   byCoutry=byCoutry.sort((a,b)=>(a.country==b.country) ? 1 : -1)
+   console.log(byCoutry)  
     return byCoutry
 }
 
@@ -588,6 +593,7 @@ function distinct(arr) {
  */
 function group(array, keySelector, valueSelector) {
    throw new Error('Not implemented');
+   
 }
 
 

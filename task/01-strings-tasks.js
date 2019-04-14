@@ -23,7 +23,7 @@
  */
 function concatenateStrings(value1, value2) {
     //throw new Error('Not implemented');
-    console.log(value1.concat(value2))
+    //console.log(value1.concat(value2))
     return value1.concat(value2)
 }
 
@@ -266,7 +266,6 @@ function encodeToRot13(str) {
  */
 function isString(value) {
    // throw new Error('Not implemented');
-   console.log(arguments.name);
     if((typeof value)==="string"|| value instanceof String){return true}else {return false}
 }
 

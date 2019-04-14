@@ -32,8 +32,26 @@
  * @return {Iterable.<string>}
  *
  */
-function* get99BottlesOfBeer() {
+function get99BottlesOfBeer() {
     throw new Error('Not implemented');
+    let  n=99;
+    //function getStr(n){
+     //   return n+' bottles of beer on the wall, '+n+' bottles of beer.'+'\n'        
+    //}
+    //function getStr2(n){
+    //    return 'Take one down and pass it around, '+eval(n-1) +' bottles of beer on the wall.'+"\n"
+    //}    
+    let res=''
+    while (n>0){        
+        res=res+getStr(n)
+        res=res+getStr2(n)
+        --n
+        
+    }    
+    res= res+'No more bottles of beer on the wall, no more bottles of beer.'+'\n'+
+      'Go to the store and buy some more, 99 bottles of beer on the wall.'
+      console.log(res)
+      return res
 }
 
 
@@ -46,8 +64,15 @@ function* get99BottlesOfBeer() {
  * @return {Iterable.<number>}
  *
  */
-function* getFibonacciSequence() {
-    throw new Error('Not implemented');
+function* getFibonacciSequence(n) {    
+        const infinite = !n && n !== 0;
+        let current = 0;
+        let next = 1;
+        
+        while (infinite || n--) {
+          yield current;
+          [current, next] = [next, current + next];
+        }
 }
 
 

@@ -77,28 +77,10 @@ function isLeapYear(date) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
-   let dif =  (endDate.getTime() - startDate.getTime());
-   //dif=Math.round(dif/60/60/24/365)
-   
-   function num(val){
-      val = Math.floor(val);
-      return val < 10 ? '0' + val : val;
-  }
-  Math.abs(dif).toString()
-   function g(ms/**number*/){
-      var sec = ms / 1000
-        , hours = sec / 3600  % 24
-        , minutes = sec / 60 % 60
-        , seconds = sec % 60
-        , mil=(sec/36000)%60
-      ;
-      return num(hours) + ":" + num(minutes) + ":" + num(seconds) + "." + num(mil)+0;
+   //console.log(new Date(endDate - startDate).toISOString())
+   return new Date(endDate - startDate).toISOString().slice(11, 23);   
   };
-  console.log(g(dif))
-   return  g(dif)
  
-}
-
 
 /**
  * Returns the angle (in radians) between the hands of an analog clock for the specified Greenwich time.
@@ -113,9 +95,17 @@ function timeSpanToString(startDate, endDate) {
  *    Date.UTC(2016,3,5,18, 0) => Math.PI
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
-function angleBetweenClockHands(date) {
-   console.log(date.getHours())
-    return 90-Math.abs(date.getHours())*30
+function angleBetweenClockHands(date) { 
+   throw new Error('Not implemented');  
+   let h=date.getHours()
+   let m=date.getMinutes()
+   console.log(h,m)
+   let hAngle = 0.5 * (h * 60 + m);
+    let mAngle = 6 * m;
+    let angle = Math.abs(hAngle - mAngle);
+    angle = Math.min(angle, 360 - angle);
+    console.log(agle)
+    return angle;  
 }
 
 
